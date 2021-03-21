@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 5</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container"> 
+        <h1 class="title">Sistema de Multas</h1>
+        <form onsubmit="calcmulta(event)">
+        <input type="number" id="velmax"  placeholder="Velocidade máx. permitida no trecho" required/> <label for="velmax"> km/h </label> 
+        <input type="number" id="veluser" placeholder="Sua velocidade no trecho" required/> <label for="veluser"> km/h </label>
+        <h3 id="multa"></h3>
+        <button type="submit" class="btn">Calcular</button>
+        </form>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <b>&copy; Mathew</b>
+        <script>
+                function calcmulta(event) {
+                        event.preventDefault()
+                        var max = parseInt(document.getElementById("velmax").value)
+                        var user = parseInt(document.getElementById("veluser").value)
+                        
+                        var tolerance1 = max + 10
+                        var tolerance2 = max + 11
+                        var tolerance3 = max + 30
+                        
+                        if(user > max && user <= tolerance1) {
+                                multa.innerHTML = "Sua multa é de R$50,00"
+                        } else if(user >= tolerance2 && user <= tolerance3) {
+                                multa.innerHTML = "Sua multa é de R$100,00" 
+                        } else if(user > tolerance3) {
+                                multa.innerHTML = "Sua multa é de R$200,00"
+                        } else {
+                                multa.innerHTML = "Sem multa, dirigiu dentro da velocidade permitida"
+                        }
+                }
+        </script>
+</body>
+
+</html>

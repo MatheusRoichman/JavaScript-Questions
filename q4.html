@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 4</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container">
+                        <h1 class="title">Placar do seu jogo</h1>
+                        <h2 id="placar"></h2>
+                        <h3 id="result"></h3>
+                        <button class="btn" onclick="calcplacar()">Calcular resultado</button><br />
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <b>&copy; Mathew</b>
+        <script>
+                function calcplacar() {
+                        var time1 = prompt("Qual era o primeiro time?")
+                        var gols1 = parseInt(prompt(`Quantos gols o ${time1} fez?`))
+                        var time2 = prompt("Qual era o segundo time?")
+                        var gols2 = parseInt(prompt(`Quantos gols o ${time2} fez?`))
+                        
+                        placar.innerHTML = `${time1} ${gols1} X ${gols2} ${time2}`
+                        
+                        if(gols1 > gols2) {
+                                result.innerHTML = `Vitória do ${time1}`
+                        } else if(gols2 > gols1) {
+                                result.innerHTML = `Vitória do ${time2}`
+                        } else {
+                                result.innerHTML = "Empate"
+                        }
+                }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 2</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container"> 
+                <h1 class="title">Frutaria</h1>
+                <h3 id="txt"></h3>
+                <button class="btn" onclick="calcpreco()">Compre maçãs!</button><br />
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <b>&copy; Mathew</b>
+        <script>
+                function calcpreco() {
+                var quant = parseInt(prompt("Quantas maçãs você vai comprar?"))
+                if(quant < 12) {
+                        txt.innerHTML = "Você comprou " + quant + " maçãs<br />O preço final é de R$" + (quant * 1.30).toFixed(2)
+                } else {
+                        txt.innerHTML = "Você comprou " + quant + " maçãs<br />O preço final é de R$" + (quant * 1.).toFixed(2)
+                }
+        }
+        </script>
+</body>
+
+</html>

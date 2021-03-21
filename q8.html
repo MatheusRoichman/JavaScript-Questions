@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 8</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container">
+                <h1 class="title">Você pode se candidatar para prefeito?</h1>
+          <form onsubmit="verifCandid(event)">
+                <label for="idad"><h3>Quantos anos você tem?</h3></label>
+                <input type="number" id="idad" placeholder="mínimo: 21" required/>
+                <label for="domi"><h3>Há quantos anos tem um domicílio eleitoral na sua cidade?</h3></label>
+                <input type="number" id="domi" placeholder="mínimo: 1" required/>
+                <label for="mandat"><h3>Quantos mandatos como prefeito você tem?</h3></label>
+                <input type="number" id="mandat" placeholder="máximo: 1" required/>
+                <h3 id="candid"></h3>
+          <button class="btn" type="submit">Verificar</button>
+          </form>
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>      
+        </div>
+        <b>&copy; Mathew</b>
+        <script>
+                        function verifCandid() {
+                        event.preventDefault()
+                        var idade = parseInt(document.getElementById("idad").value)
+                        var domic = parseInt(document.getElementById("domi").value)
+                        var mandato = parseInt(document.getElementById("mandat").value)
+                        
+                        if(idade >= 21 && domic >= 1 && mandato <= 1) {
+                                candid.innerHTML = "Você pode se candidatar!"
+                        } else {
+                                candid.innerHTML = "Você não pode se candidatar."
+                        }
+                        }
+        </script>
+</body>
+
+</html>

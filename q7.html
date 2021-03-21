@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 7</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container">
+                <h1 class="title">Você já pode<br/>se aposentar?</h1> 
+                <form onsubmit="mudarValor(), verifAposent(event)">
+                <select onchange="mudarValor()" id="sexouser" required>
+                        <option disable selected value="0">Qual é seu sexo?</option>
+                        <option value="1">Homem</option>
+                        <option value="2">Mulher</option>
+                </select>
+                <input id="anonasc" type="number" placeholder="Seu ano de nascimento" required/>
+                <input id="anotrab" type="number" placeholder="O ano que você entrou na empresa" required/>
+                <h3 id="aposent"></h3>
+                <button class="btn" type="submit">Verificar</button>
+                </form>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <b>&copy; Mathew</b>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+                var anoAtual = new Date().getFullYear()
+                var idade = anoAtual - parseInt(document.getElementById("anonasc").value)
+                var trab = anoAtual - parseInt(document.getElementById("anotrab").value)
+                var sexo = parseInt(document.getElementById("sexouser").value)
+                
+                function mudarValor() {
+                        anoAtual = new Date().getFullYear()
+                        idade = anoAtual - parseInt(document.getElementById("anonasc").value)
+                        trab = anoAtual - parseInt(document.getElementById("anotrab").value)
+                        sexo = parseInt(document.getElementById("sexouser").value)
+                }
+                
+                function homemAposent() {
+                        if(idade >= 65 && trab >= 30) {
+                                aposent.innerHTML = "Você já pode se aposentar!"
+                        } else {
+                                aposent.innerHTML = "Você ainda não pode se aposentar.<br />Lembre-se: são 65 anos de idade e 30 anos de trabalho para se aposentar!"
+                        }
+                }
+                function mulherAposent() {
+                        if(idade >= 60 && trab >= 25) {
+                        aposent.innerHTML = "Você já pode se aposentar!"
+                        } else {
+                        aposent.innerHTML = "Você ainda não pode se aposentar.<br />Lembre-se: são 60 anos de idade e 25 anos de trabalho para se aposentar!"
+                        }
+                }
+                function verifAposent(event) {
+                        event.preventDefault()
+                        if(sexo == "1") {
+                                homemAposent()
+                        } else if(sexo == "2") {
+                               mulherAposent()
+                        } else {
+                                swal("Informe seu sexo!", "", "warning")
+                        }
+                }
+        </script>
+</body>
+
+</html>

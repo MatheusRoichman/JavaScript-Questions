@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 1</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container">
+        <h1 class="title">Calculadora de média</h1> 
+                <h3 id="txt"></h3>
+        <button class="btn" onclick="calcmedia()">Calcular média</button><br />
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <b>&copy; Mathew</b>
+        <script>
+                function calcmedia() {
+                        var nome = prompt("Nome do aluno:")
+                        var nota1 = parseFloat(prompt("Digite a primeira nota:"))
+                        var nota2 = parseFloat(prompt("Digite a segunda nota:"))
+                        var nota3 = parseFloat(prompt("Digite a terceira nota:"))
+        
+                        var media = ((nota1 + nota2 + nota3) / 3).toFixed(2)
+        
+                        txt.innerHTML = `Aluno ${nome} ficou com a média ${media}`
+                }
+        </script>
+</body>
+
+</html>

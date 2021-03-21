@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 6</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div id="container">
+        <h1 class="title">Indicador de classe</h1> 
+        <form onsubmit="calcclasse(event)">
+        <input type="number" id="salarios" placeholder="Nº de salários mínimos da família" required/>
+        <h3 id="classe"></h3>
+        <button class="btn" type="submit">Veja sua classe!</button>
+        </form>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  </div>
+  <b>&copy; Mathew</b>
+  <script>
+          function calcclasse(event) { 
+                  event.preventDefault()
+                  var quantSalarios = parseInt(document.getElementById("salarios").value) 
+                  if(quantSalarios > 15){ classe.innerHTML = "Você é da classe A" 
+                          } else if(quantSalarios > 5 && quantSalarios <= 15) {
+                                  classe.innerHTML = "Você é da classe B" 
+                          } else if(quantSalarios > 3 && quantSalarios <= 5) {
+                                  classe.innerHTML = "Você é da classe C" 
+                          } else if(quantSalarios > 1 && quantSalarios <= 3) {
+                                  classe.innerHTML = "Você é da classe D" 
+                          } else { 
+                                  classe.innerHTML = "Você é da classe E" 
+                                  } 
+                        }
+  </script>
+</body>
+
+</html>

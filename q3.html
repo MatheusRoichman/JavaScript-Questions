@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questão 3</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+        <div id="container">
+                <h1 class="title">Calculadora de<br/>álcool em gel</h1>
+                <h3 id="txt"></h3>
+                <button class="btn" onclick="calcgel()">Calcule as gramas</button><br />
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <b>&copy; Mathew</b>
+        <script>        
+                function calcgel() {
+                        var turma = prompt("Qual é sua turma?")
+                        var tubos = Number(prompt(`Quantos tubos de álcool em gel foram usados em 1 dia na turma de ${turma}?`))
+                        txt.innerHTML = `Serão necessárias ${tubos * 500 * 5} gramas de álcool em gel por semana para a turma de ${turma}.`
+                }
+        </script>
+</body>
+
+</html>
