@@ -23,13 +23,9 @@
                         var nota2 = parseFloat(prompt("Digite a segunda nota:"))
                         var nota3 = parseFloat(prompt("Digite a terceira nota:"))
         
-                        var media = (nota1 + nota2 + nota3) / 3)
-                        if(media == NaN) {
-                        alert("Você digitou um valor inválido em alguma parte!")
-                        calcmedia()
-                        } else {
+                        var media = ((nota1 + nota2 + nota3) / 3).toFixed(2)
+        
                         txt.innerHTML = `Aluno ${nome} ficou com a média ${media}`
-                        }
                 }
         </script>
 </body>
